@@ -4,16 +4,16 @@ import java.io.*;
 
 class KnapsackSolver {
 
-    public static int knapsack(int W, int wt[], int vals[], int n){
+    public static int knapSack(int W, int wt[], int vals[], int n){
         int myTable[][] = new int [n][W]; //creates a 2D array
 
         for(int i=0; i<n; i++ ){
             for(int j=0; j<=W; j++ ){
+                int option1 = vals[i]+myTable[i-1][j-wt[i]];
+                int option2 = myTable[i-1][j];
                 if(W==0 | i==0){  //either the sack is empty or there is no item to take
                     myTable[i][j] = 0;
                 if(wt[i]<=j){
-                    int option1 = vals[i]+myTable[i-1][j-wt[i]];
-                    int option2 = myTable[i-1][j];
                     myTable[i][j]= Math.max(option1, option2);
                 }else{
                         myTable[i][j]= option2;
@@ -24,8 +24,9 @@ class KnapsackSolver {
                 }
 
                 }
-                return myTable[n][W];
+
                 }
+                return myTable[n][W];
             }
 
 
