@@ -5,7 +5,7 @@ import java.io.*;
 class KnapsackSolver {
 
     public static int knapsack(int W, int wt[], int vals[], int n){
-        int myTable[][] = new int [n][W] //creates a 2D array
+        int myTable[][] = new int [n][W]; //creates a 2D array
 
         for(int i=0; i<n; i++ ){
             for(int j=0; j<=W; j++ ){
@@ -33,7 +33,7 @@ class KnapsackSolver {
 
 
 	public static void main (String[] args) {
-		//testing the meothod above
+		//testing the method above
        int val[] = new int[]{60, 100, 120};
        int wt[] = new int[]{10, 20, 30};
        int W = 50;
