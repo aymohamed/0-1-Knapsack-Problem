@@ -11,16 +11,15 @@ class KnapsackSolver {
             for(int j=0; j<=W; j++ ){
                 if(W==0 | i==0){  //either the sack is empty or there is no item to take
                     myTable[i][j] = 0;
-                else{
+                if(wt[i]<=j){
                     int option1 = vals[i]+myTable[i-1][j-wt[i]];
                     int option2 = myTable[i-1][j];
-                    if(wt[i]<=j){
-                        myTable[i][j]= Math.max(option1, option2);
-                    }else{
+                    myTable[i][j]= Math.max(option1, option2);
+                }else{
                         myTable[i][j]= option2;
                     }
 
-                    }
+
 
                 }
 
@@ -33,7 +32,7 @@ class KnapsackSolver {
 
 
 	public static void main (String[] args) {
-		//testing the method above
+		//testing the meothod above
        int val[] = new int[]{60, 100, 120};
        int wt[] = new int[]{10, 20, 30};
        int W = 50;
