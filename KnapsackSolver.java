@@ -12,7 +12,7 @@ class KnapsackSolver {
                 if(W==0 | i==0){  //either the sack is empty or there is no item to take
                     myTable[i][j] = 0;
                 else{
-                    int option1 = vals[i]+myTable[i-1][j-wt[i];
+                    int option1 = vals[i]+myTable[i-1][j-wt[i]];
                     int option2 = myTable[i-1][j];
                     if(wt[i]<=j){
                         myTable[i][j]= Math.max(option1, option2);
