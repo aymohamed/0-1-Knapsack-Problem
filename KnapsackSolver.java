@@ -15,7 +15,7 @@ class KnapsackSolver {
                     int option1 = vals[i]+myTable[i-1][j-wt[i];
                     int option 2 = myTable[i-1][j];
                     if(wt[i]<=j){
-                        myTable[i][j]= max(option1, option2);
+                        myTable[i][j]= Math.max(option1, option2);
                     }else{
                         myTable[i][j]= option2;
                     }
@@ -34,5 +34,10 @@ class KnapsackSolver {
 
 	public static void main (String[] args) {
 		//testing the meothod above
+       int val[] = new int[]{60, 100, 120};
+       int wt[] = new int[]{10, 20, 30};
+       int W = 50;
+       int n = val.length;
+       System.out.println(knapSack(W, wt, val, n));
 	}
 }
