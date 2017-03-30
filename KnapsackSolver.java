@@ -13,7 +13,7 @@ class KnapsackSolver {
                     myTable[i][j] = 0;
                 else{
                     int option1 = vals[i]+myTable[i-1][j-wt[i];
-                    int option 2 = myTable[i-1][j];
+                    int option2 = myTable[i-1][j];
                     if(wt[i]<=j){
                         myTable[i][j]= Math.max(option1, option2);
                     }else{
