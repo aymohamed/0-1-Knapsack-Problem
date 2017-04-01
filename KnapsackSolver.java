@@ -6,12 +6,13 @@ class KnapsackSolver {
 
     public static int knapSack(int W, int wt[], int vals[], int n){
         int myTable[][] = new int [n][W]; //creates a 2D array
-        if(W==0 | n==0){  //either the sack is empty or there is no item to take
-            myTable[i][j] = 0;
-        for(int i=0; i<n; i++ ){
-            for(int j=0; j<=W; j++ ){
+        for(int i=1; i<=n; i++ ){
+            for(int j=1; j<=W; j++ ){
                 int option1 = vals[i]+myTable[i-1][j-wt[i]];
                 int option2 = myTable[i-1][j];
+                if(W==0 | n==0){  //either the sack is empty or there is no item to take
+                    myTable[i][j] = 0;
+                }
                 if(wt[i]<=j){
                     myTable[i][j]= Math.max(option1, option2);
                 }else{
@@ -24,7 +25,7 @@ class KnapsackSolver {
 
                 }
 
-                }
+
                 return myTable[n][W];
             }
 
